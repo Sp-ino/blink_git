@@ -1,0 +1,5 @@
+create_clock -period 10.000 -name ck -waveform {0.000 5.000} [get_ports ck]
+set_input_delay -clock [get_clocks ck] -min -add_delay 0.110 [get_ports rst]
+set_input_delay -clock [get_clocks ck] -max -add_delay 10.000 [get_ports rst]
+set_output_delay -clock [get_clocks ck] -min -add_delay -1.900 [get_ports led_out]
+set_output_delay -clock [get_clocks ck] -max -add_delay 6.000 [get_ports led_out]
